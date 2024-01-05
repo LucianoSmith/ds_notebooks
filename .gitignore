@@ -1,0 +1,5 @@
+# ignora archivos de Mac
+.DS_store
+
+# ignora la carpeta del entorno python
+.venv
