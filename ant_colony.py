@@ -157,13 +157,12 @@ class AntColonyLS(object):
         return path
 
     def pick_move(self, pheromone, dist, visited):
+        
         pheromone = np.copy(pheromone)
         pheromone[list(visited)] = 0
-
-        row = pheromone ** self.alpha * (( 1.0 / dist) ** self.beta)
-
-        norm_row = row / row.sum()
-        move = np_choice(self.all_inds, 1, p=norm_row)[0]
+        row = pheromone ** self.alpha * (( 1.0 / dist) ** self.beta)  
+        norm_row = row / row.sum()         
+        move = np_choice(self.all_inds, 1, p=norm_row)[0]       
         return move
     
     def all_paths_ls(self, all_paths):
