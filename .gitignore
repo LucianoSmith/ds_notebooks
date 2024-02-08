@@ -3,3 +3,14 @@
 
 # ignora la carpeta del entorno python
 .venv
+__pycache__
+data
+data_aug
+dataset_0
+dataset_1
+dataset_manos_modificado
+dataset_vgg1
+ds1_checkpoints
+laser
+perros_y_gatos
+pruebas
