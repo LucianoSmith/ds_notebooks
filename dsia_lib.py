@@ -73,12 +73,12 @@ def predecir_imagen(array_img, modelo):
 
 class dsia():
 
-    def __init__(self) -> None:
+    def __init__(self, model) -> None:
         self.set_params()
         # inicializa el modelo de IA
         self.model = InsectClassifier(self.CANTIDAD_CLASES)
         # Cargar los pesos entrenados
-        self.model.load_state_dict(torch.load('01_nn1_modelo_insectos2000.pth'))
+        self.model.load_state_dict(torch.load(model)) # '01_nn1_modelo_insectos2000.pth'
         self.model.eval()  # Establecer el modelo en modo de evaluación
 
     def set_img(self, img) -> None:
@@ -459,9 +459,12 @@ class dsia():
                 img = self.image_addBoundingbox(img, row.x, row.y, row.state, True, row.obj_id)
 
             if self.draw_targ and (row.targetX>0 or row.targetY>0):
-                img = self.draw_target(img, row.targetX, row.targetY)
+                img = self.draw_target(img, row.targetX, row.targetY)        
+
+        if self.draw_rout and (self.path.obj_id.count()>0):
+            img = self.route()
         
-        
+
         return img
 
     def change_insect(self, id, data):

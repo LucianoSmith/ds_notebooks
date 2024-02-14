@@ -1,0 +1,27 @@
+{
+
+    "appearance_mode": "Dark", 
+
+    "color_theme": "blue",
+
+    "checkbox": {
+        "bbox": 1,
+        "objn": 1,
+        "conf": 1,
+        "targ": 0,
+        "rout": 0
+    },
+
+    "img_size": 150,
+    "cross_size": 30,
+    
+    "classify": {
+        "model": "01_nn1_modelo_insectos2000.pth",
+        "class_umbral": 0.5
+    },
+
+    "route": {
+        "method": "noOpt"
+    }
+
+}
